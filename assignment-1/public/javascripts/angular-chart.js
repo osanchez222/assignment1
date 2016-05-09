@@ -22,6 +22,7 @@ function formatDataTable(chartdata) {
     temp.push(chartdata[i].AVERAGE_COST);
     data.push(temp);
   }
+  
 
   var g_data = google.visualization.arrayToDataTable(data);
   var geochart = new google.visualization.GeoChart(document.getElementById('chart_div'));
@@ -31,16 +32,15 @@ function formatDataTable(chartdata) {
 function getOptions()
 {
      var options = {
-       title: 'HealthCare Cost By State',
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'Costs :-(',
-          minValue: 0
-        },
-        vAxis: {
-          title: 'State'
-        }
-      };
+      width: 800,
+      height: 600, 
+      region: "US", 
+      resolution: "provinces",
+      colorAxis: {colors: ['#6BE262', 'red']},
+      backgroundColor: '#81d4fa',
+      datalessRegionColor: '#f8bbd0',
+      defaultColor: '#f5f5f5'
+     };
       
 
     return options;
